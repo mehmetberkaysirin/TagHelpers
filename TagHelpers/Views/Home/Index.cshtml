@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Product>
+    @{
+        ViewData["Title"] = "Home Page";
+    }
+
+    <div class="m-1 p-1 bg-primary">
+        <div class="row text-white">
+            <div class="col">
+                <h4>Index</h4>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="m-1 p-1">
+        <div class="row">
+            <div class="col">
+
+                <table class="table table-bordered table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td></td>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>@item.ProductId </th>
+                                <td>@item.ProductName</td>
+                                <td>@item.Price</td>
+                                <td>
+                                </td>
+                            </tr>
+                        }
+
+
+
+                    </tbody>
+                </table>
+                <a asp-action="Create" asp-controller="Home"  class="btn btn-primary">Create</a>
+
+            </div>
+
+
+
+        </div>
+    </div>
